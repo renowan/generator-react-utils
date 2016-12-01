@@ -1,8 +1,15 @@
 # generator-react-utils
 
-## install
+> [Yeoman](http://yeoman.io) generator for react, redux.
+
+## Installation
+Make sure you have yeoman installed:
 ```
-npm install -g https://github.com/renowan/generator-react-utils
+npm install -g yo
+```
+Install `generator-react-utils`:
+```
+npm install -g git://github.com/renowan/generator-react-utils.git
 ```
 
 ## Use
