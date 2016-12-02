@@ -4,7 +4,7 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
+var basePath = 'src/';
 var toUpper = function (text) {
   var text2 = text.charAt(0).toUpperCase() + text.slice(1);
   text2 = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
@@ -73,7 +73,7 @@ module.exports = yeoman.generators.Base.extend({
       if (this.kind === 'action') {
         this.fs.copyTpl(
           this.templatePath('action.js'),
-          this.destinationPath('actions/' + this._config.name + 'Action.js'),
+          this.destinationPath(basePath + 'actions/' + this._config.name + 'Action.js'),
           this._config
         );
       }
@@ -81,12 +81,12 @@ module.exports = yeoman.generators.Base.extend({
       if (this.kind === 'component') {
         this.fs.copyTpl(
           this.templatePath('component.js'),
-          this.destinationPath('components/' + moduleName + '/' + moduleName + '.js'),
+          this.destinationPath(basePath + 'components/' + moduleName + '/' + moduleName + '.js'),
           this._config
         );
         this.fs.copyTpl(
           this.templatePath('pageView.scss'),
-          this.destinationPath('components/' + moduleName + '/' + moduleName + '.scss'),
+          this.destinationPath(basePath + 'components/' + moduleName + '/' + moduleName + '.scss'),
           this._config
         );
       }
@@ -94,19 +94,19 @@ module.exports = yeoman.generators.Base.extend({
       if (this.kind === 'pageView') {
         this.fs.copyTpl(
           this.templatePath('pageView.js'),
-          this.destinationPath('views/' + moduleName + '/' + moduleName + 'View.js'),
+          this.destinationPath(basePath + 'views/' + moduleName + '/' + moduleName + 'View.js'),
           this._config
         );
 
         this.fs.copyTpl(
           this.templatePath('pageViewIndex.js'),
-          this.destinationPath('views/' + moduleName + '/index.js'),
+          this.destinationPath(basePath + 'views/' + moduleName + '/index.js'),
           this._config
         );
 
         this.fs.copyTpl(
           this.templatePath('pageView.scss'),
-          this.destinationPath('views/' + moduleName + '/' + moduleName + 'View.scss'),
+          this.destinationPath(basePath + 'views/' + moduleName + '/' + moduleName + 'View.scss'),
           this._config
         );
       }
@@ -114,7 +114,7 @@ module.exports = yeoman.generators.Base.extend({
       if (this.kind === 'redux') {
         this.fs.copyTpl(
           this.templatePath('redux.js'),
-          this.destinationPath('redux/modules/' + this._config.name + '.js'),
+          this.destinationPath(basePath + 'redux/modules/' + this._config.name + '.js'),
           this._config
         );
       }
