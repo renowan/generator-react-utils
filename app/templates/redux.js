@@ -21,7 +21,7 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 // Reducer
 // ------------------------------------
-export default function detail (state = initialState, action) {
+export default function <%= name %> (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
   return handler ? handler(state, action) : state
 }
