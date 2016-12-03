@@ -41,8 +41,6 @@ module.exports = yeoman.generators.Base.extend({
     ];
 
     this.prompt(prompts, function (props) {
-      // console.log(prompts);
-      // console.log(props);
       this.kind = props.kind;
       this.name = props.name;
 
@@ -87,6 +85,11 @@ module.exports = yeoman.generators.Base.extend({
         this.fs.copyTpl(
           this.templatePath('pageView.scss'),
           this.destinationPath(basePath + 'components/' + moduleName + '/' + moduleName + '.scss'),
+          this._config
+        );
+        this.fs.copyTpl(
+          this.templatePath('pageViewIndex.js'),
+          this.destinationPath(basePath + 'views/' + moduleName + '/index.js'),
           this._config
         );
       }
