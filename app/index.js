@@ -88,7 +88,7 @@ module.exports = yeoman.generators.Base.extend({
           this._config
         );
         this.fs.copyTpl(
-          this.templatePath('pageViewIndex.js'),
+          this.templatePath('index.js'),
           this.destinationPath(basePath + 'components/' + moduleName + '/index.js'),
           this._config
         );
