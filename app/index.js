@@ -7,7 +7,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var basePath = 'src/';
 var toUpper = function (text) {
   var text2 = text.charAt(0).toUpperCase() + text.slice(1);
-  text2 = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+  // text2 = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
   return text2;
 }
 
@@ -89,7 +89,7 @@ module.exports = yeoman.generators.Base.extend({
         );
         this.fs.copyTpl(
           this.templatePath('pageViewIndex.js'),
-          this.destinationPath(basePath + 'views/' + moduleName + '/index.js'),
+          this.destinationPath(basePath + 'components/' + moduleName + '/index.js'),
           this._config
         );
       }
